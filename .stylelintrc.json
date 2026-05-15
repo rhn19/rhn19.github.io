@@ -1,0 +1,12 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "no-descending-specificity": null,
+    "property-no-vendor-prefix": [true, {
+      "ignoreProperties": ["-webkit-backdrop-filter"]
+    }],
+    "selector-class-pattern": null,
+    "media-feature-range-notation": null,
+    "declaration-block-no-redundant-longhand-properties": null
+  }
+}
