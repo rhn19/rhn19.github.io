@@ -71,4 +71,4 @@ jobs:
           uploadArtifacts: true
 
       - name: Accessibility audit
-        run: npx pa11y http://localhost:3000 --standard WCAG2AA --launch-options '{"args":["--no-sandbox"]}'
+        run: npx pa11y http://localhost:3000 --standard WCAG2AA --config .pa11y.json
