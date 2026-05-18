@@ -74,26 +74,24 @@
     });
   }
 
-  /* --- Video Hover-to-Play --- */
+  /* --- Video Autoplay on Scroll --- */
   function initVideos() {
-    var videos = document.querySelectorAll("video[data-hover-play]");
-    var isMobile = window.matchMedia("(hover: none)").matches;
+    var videos = document.querySelectorAll("video[muted][loop]");
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    videos.forEach(function (video) {
-      if (isMobile) {
-        video.addEventListener("click", function () {
-          if (video.paused) video.play(); else video.pause();
-        });
-      } else {
-        var container = video.closest(".exp-media-item") || video.closest(".exp-media-thumb");
-        if (!container) return;
-        container.addEventListener("mouseenter", function () { video.play(); });
-        container.addEventListener("mouseleave", function () {
-          video.pause();
-          video.currentTime = 0;
-        });
-      }
-    });
+    if (reducedMotion) return;
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.play().catch(function () {});
+        } else {
+          entry.target.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    videos.forEach(function (video) { observer.observe(video); });
   }
 
   /* --- Mobile Nav Toggle --- */
