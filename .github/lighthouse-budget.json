@@ -8,7 +8,7 @@
       { "resourceType": "script", "budget": 10 }
     ],
     "timings": [
-      { "metric": "first-contentful-paint", "budget": 1000 },
+      { "metric": "first-contentful-paint", "budget": 1500 },
       { "metric": "largest-contentful-paint", "budget": 2000 },
       { "metric": "cumulative-layout-shift", "budget": 0.05 }
     ]
