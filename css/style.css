@@ -139,11 +139,11 @@ ol {
 .sidebar {
   width: clamp(300px, 25vw, 320px);
   flex-shrink: 0;
-  padding: clamp(4px, 9dvh, 56px) 16px clamp(4px, 9dvh, 56px) 48px;
+  padding: clamp(4px, 15dvh - 40px, 56px) 16px clamp(4px, 15dvh - 30px, 56px) 48px;
   position: sticky;
   top: 0;
-  height: 100vh;
-  overflow-y: auto;
+  height: 100dvh;
+  overflow: hidden;
 }
 
 .sidebar-inner {
@@ -153,19 +153,19 @@ ol {
 }
 
 .sidebar-top {
-  margin-bottom: clamp(4px, 5vh, 32px);
+  margin-bottom: clamp(4px, 11dvh - 34px, 38px);
 }
 
 .sidebar-nav {
-  margin-bottom: clamp(8px, 2vh, 24px);
+  margin-bottom: 0;
 }
 
 .sidebar-bottom {
   margin-top: auto;
-  padding-top: clamp(8px, 2vh, 16px);
+  padding-top: clamp(8px, 5dvh - 12px, 20px);
   display: flex;
   flex-direction: column;
-  gap: clamp(4px, 1.5vh, 12px);
+  gap: clamp(4px, 1.5dvh, 12px);
 }
 
 .sidebar-name a {
@@ -183,7 +183,7 @@ ol {
 .sidebar-title {
   font-size: 17px;
   color: var(--text);
-  margin-top: 8px;
+  margin-top: clamp(4px, 3dvh - 7px, 8px);
   font-weight: 500;
 }
 
@@ -204,14 +204,14 @@ ol {
 .sidebar-nav ul {
   display: flex;
   flex-direction: column;
-  gap: clamp(0px, 0.8vh, 4px);
+  gap: clamp(0px, 0.8dvh, 4px);
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: clamp(2px, 1.3vh, 8px) 0;
+  padding: clamp(2px, 6dvh - 18px, 8px) 0;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -279,7 +279,7 @@ ol {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-top: clamp(2px, 4vh, 32px);
+  margin-top: clamp(4px, 11dvh - 34px, 38px);
 }
 
 .sidebar-social a {
@@ -694,34 +694,6 @@ h3 a:hover .link-arrow {
 }
 
 
-
-@media (max-height: 500px) and (min-width: 769px) {
-  .sidebar {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }
-
-  .sidebar-top {
-    margin-bottom: 8px;
-  }
-
-  .sidebar-nav ul {
-    gap: 2px;
-  }
-
-  .nav-link {
-    padding: 4px 0;
-  }
-
-  .sidebar-social {
-    margin-top: 8px;
-  }
-
-  .sidebar-bottom {
-    padding-top: 4px;
-    margin-top: 8px;
-  }
-}
 
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
