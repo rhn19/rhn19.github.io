@@ -139,10 +139,11 @@ ol {
 .sidebar {
   width: 320px;
   flex-shrink: 0;
-  padding: 56px 16px 56px 48px;
+  padding: clamp(4px, 9vh, 56px) 16px clamp(4px, 9vh, 56px) 48px;
   position: sticky;
   top: 0;
   height: 100vh;
+  overflow-y: auto;
 }
 
 .sidebar-inner {
@@ -152,22 +153,23 @@ ol {
 }
 
 .sidebar-top {
-  margin-bottom: 32px;
+  margin-bottom: clamp(4px, 5vh, 32px);
 }
 
 .sidebar-nav {
-  margin-bottom: 24px;
+  margin-bottom: clamp(8px, 3vh, 24px);
 }
 
 .sidebar-bottom {
   margin-top: auto;
+  padding-top: clamp(8px, 2vh, 16px);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: clamp(4px, 1.5vh, 12px);
 }
 
 .sidebar-name a {
-  font-size: 42px;
+  font-size: clamp(28px, 8vh, 42px);
   font-weight: 700;
   color: var(--text);
   letter-spacing: -0.03em;
@@ -202,14 +204,14 @@ ol {
 .sidebar-nav ul {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: clamp(0px, 0.8vh, 4px);
 }
 
 .nav-link {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 8px 0;
+  padding: clamp(2px, 1.3vh, 8px) 0;
   font-size: 12px;
   font-weight: 600;
   text-transform: uppercase;
@@ -277,7 +279,7 @@ ol {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-top: 32px;
+  margin-top: clamp(4px, 5vh, 32px);
 }
 
 .sidebar-social a {
@@ -419,11 +421,6 @@ main {
   margin-bottom: 16px;
 }
 
-.exp-media-grid:has(> :only-child) {
-  grid-template-columns: 1fr;
-  max-width: 400px;
-}
-
 .exp-media-item {
   border-radius: 6px;
   overflow: hidden;
@@ -549,7 +546,6 @@ h3 a:hover .link-arrow {
 @media (max-width: 1024px) {
   .sidebar {
     width: 300px;
-    padding: 48px 24px;
   }
 
   main {
@@ -705,6 +701,34 @@ h3 a:hover .link-arrow {
 
   .section-label {
     padding: 12px 0;
+  }
+}
+
+
+@media (max-height: 500px) and (min-width: 769px) {
+  .sidebar {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .sidebar-top {
+    margin-bottom: 8px;
+  }
+
+  .sidebar-nav ul {
+    gap: 2px;
+  }
+
+  .nav-link {
+    padding: 4px 0;
+  }
+
+  .sidebar-social {
+    margin-top: 8px;
+  }
+
+  .sidebar-bottom {
+    padding-top: 4px;
   }
 }
 
