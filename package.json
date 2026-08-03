@@ -12,7 +12,7 @@
     "validate": "npm run lint:html && npm run lint:css"
   },
   "devDependencies": {
-    "html-validate": "11.2.0",
+    "html-validate": "11.6.0",
     "pa11y": "9.1.1",
     "serve": "14.2.6",
     "stylelint": "17.11.1",
